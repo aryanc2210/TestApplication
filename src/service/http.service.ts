@@ -65,4 +65,38 @@ export class HttpService {
       status: "503",
     };
   }
+
+  public async timeout(): Promise<any> {
+    return {
+      message: "TIMEOUT",
+      status: "504",
+    };
+  }
+  public async networkError(): Promise<any> {
+    return {
+      message: "NETWORK_ERROR",
+      status: "503",
+    };
+  }
+
+  public async econnRefused(): Promise<any> {
+    return {
+      message: "ECONNREFUSED",
+      status: "502",
+    };
+  }
+
+  public async dnsNotFound(): Promise<any> {
+    return {
+      message: "ENOTFOUND",
+      status: "404",
+    };
+  }
+
+  public async hostUnreachable(): Promise<any> {
+    return {
+      message: "EHOSTUNREACH",
+      status: "503",
+    };
+  }
 }

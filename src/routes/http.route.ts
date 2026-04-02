@@ -14,5 +14,10 @@ router.get("/status/401", httpController.unauthorized);
 router.get("/status/403", httpController.forbidden);
 router.get("/status/502", httpController.badGateway);
 router.get("/status/503", httpController.serviceUnreachable);
+router.get("/status/timeout", httpController.timeout);
+router.get("/status/network-error", httpController.networkError);
+router.get("/status/econn-refused", httpController.econnRefused);
+router.get("/status/dns-not-found", httpController.dnsNotFound);
+router.get("/status/host-unreachable", httpController.hostUnreachable);
 
 export default router;

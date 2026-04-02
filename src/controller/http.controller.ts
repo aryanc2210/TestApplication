@@ -176,4 +176,89 @@ export class HttpController {
       });
     }
   };
+
+  public timeout = async (req: Request, res: Response): Promise<void> => {
+    try {
+      const response = await this.healthService.timeout();
+
+      res.status(504).json({
+        message: response.message,
+        status: response.status,
+      });
+    } catch (error) {
+      console.error(error);
+
+      res.status(500).json({
+        message: "Internal Server Error",
+      });
+    }
+  };
+
+  public networkError = async (req: Request, res: Response): Promise<void> => {
+    try {
+      const response = await this.healthService.networkError();
+
+      res.status(503).json({
+        message: response.message,
+        status: response.status,
+      });
+    } catch (error) {
+      console.error(error);
+
+      res.status(500).json({
+        message: "Internal Server Error",
+      });
+    }
+  };
+
+  public econnRefused = async (req: Request, res: Response): Promise<void> => {
+    try {
+      const response = await this.healthService.econnRefused();
+
+      res.status(502).json({
+        message: response.message,
+        status: response.status,
+      });
+    } catch (error) {
+      console.error(error);
+
+      res.status(500).json({
+        message: "Internal Server Error",
+      });
+    }
+  };
+
+  public dnsNotFound = async (req: Request, res: Response): Promise<void> => {
+    try {
+      const response = await this.healthService.dnsNotFound();
+
+      res.status(404).json({
+        message: response.message,
+        status: response.status,
+      });
+    } catch (error) {
+      console.error(error);
+
+      res.status(500).json({
+        message: "Internal Server Error",
+      });
+    }
+  };
+
+  public hostUnreachable = async (req: Request, res: Response): Promise<void> => {
+    try {
+      const response = await this.healthService.hostUnreachable();
+
+      res.status(503).json({
+        message: response.message,
+        status: response.status,
+      });
+    } catch (error) {
+      console.error(error);
+
+      res.status(500).json({
+        message: "Internal Server Error",
+      });
+    }
+  };
 }
