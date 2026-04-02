@@ -4,6 +4,9 @@ import { HttpController } from "../controller/http.controller.js";
 const router = Router();
 const httpController = new HttpController();
 
+router.get("/", async (req, res) => {
+  res.json({ message: "Test Route" });
+});
 router.get("/status/200", httpController.success);
 router.get("/status/201", httpController.created);
 router.get("/status/400", httpController.badRequest);
