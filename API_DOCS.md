@@ -35,7 +35,23 @@ The server will start on port 4020 (or custom port via `PORT` environment variab
 
 ## API Endpoints
 
-All endpoints are **GET** requests and return JSON responses with the following structure:
+### Root Route
+```
+GET /
+```
+**Description:** Returns a test message  
+**Response Status:** 200 OK
+
+**Response Body:**
+```json
+{
+  "message": "Test Route"
+}
+```
+
+---
+
+All status endpoints are **POST** requests and return JSON responses with the following structure:
 
 ```json
 {
@@ -46,7 +62,7 @@ All endpoints are **GET** requests and return JSON responses with the following 
 
 ### 1. Success Response
 ```
-GET /status/200
+POST /status/200
 ```
 **Description:** Returns a successful response  
 **Response Status:** 200 OK
@@ -63,7 +79,7 @@ GET /status/200
 
 ### 2. Created Response
 ```
-GET /status/201
+POST /status/201
 ```
 **Description:** Returns a created response  
 **Response Status:** 201 Created
@@ -80,7 +96,7 @@ GET /status/201
 
 ### 3. Bad Request
 ```
-GET /status/400
+POST /status/400
 ```
 **Description:** Returns a bad request error  
 **Response Status:** 400 Bad Request
@@ -97,7 +113,7 @@ GET /status/400
 
 ### 4. Not Found
 ```
-GET /status/404
+POST /status/404
 ```
 **Description:** Returns a not found error  
 **Response Status:** 404 Not Found
@@ -114,7 +130,7 @@ GET /status/404
 
 ### 5. Unauthorized
 ```
-GET /status/401
+POST /status/401
 ```
 **Description:** Returns an unauthorized error  
 **Response Status:** 401 Unauthorized
@@ -131,7 +147,7 @@ GET /status/401
 
 ### 6. Forbidden
 ```
-GET /status/403
+POST /status/403
 ```
 **Description:** Returns a forbidden error  
 **Response Status:** 403 Forbidden
@@ -148,7 +164,7 @@ GET /status/403
 
 ### 7. Internal Server Error
 ```
-GET /status/500
+POST /status/500
 ```
 **Description:** Returns an internal server error  
 **Response Status:** 500 Internal Server Error
@@ -165,7 +181,7 @@ GET /status/500
 
 ### 8. Rate Limit Exceeded
 ```
-GET /status/429
+POST /status/429
 ```
 **Description:** Returns a rate limit exceeded error  
 **Response Status:** 429 Too Many Requests
@@ -182,7 +198,7 @@ GET /status/429
 
 ### 9. Bad Gateway
 ```
-GET /status/502
+POST /status/502
 ```
 **Description:** Returns a bad gateway error  
 **Response Status:** 502 Bad Gateway
@@ -199,7 +215,7 @@ GET /status/502
 
 ### 10. Service Unavailable
 ```
-GET /status/503
+POST /status/503
 ```
 **Description:** Returns a service unavailable error  
 **Response Status:** 503 Service Unavailable
@@ -216,7 +232,7 @@ GET /status/503
 
 ### 11. Timeout
 ```
-GET /status/timeout
+POST /status/timeout
 ```
 **Description:** Simulates a gateway timeout  
 **Response Status:** 504 Gateway Timeout
@@ -233,7 +249,7 @@ GET /status/timeout
 
 ### 12. Network Error
 ```
-GET /status/network-error
+POST /status/network-error
 ```
 **Description:** Simulates a network error  
 **Response Status:** 503 Service Unavailable
@@ -250,7 +266,7 @@ GET /status/network-error
 
 ### 13. Connection Refused
 ```
-GET /status/econn-refused
+POST /status/econn-refused
 ```
 **Description:** Simulates a connection refused error  
 **Response Status:** 502 Bad Gateway
@@ -267,7 +283,7 @@ GET /status/econn-refused
 
 ### 14. DNS Not Found
 ```
-GET /status/dns-not-found
+POST /status/dns-not-found
 ```
 **Description:** Simulates a DNS resolution failure  
 **Response Status:** 404 Not Found
@@ -284,7 +300,7 @@ GET /status/dns-not-found
 
 ### 15. Host Unreachable
 ```
-GET /status/host-unreachable
+POST /status/host-unreachable
 ```
 **Description:** Simulates a host unreachable error  
 **Response Status:** 503 Service Unavailable
@@ -303,14 +319,17 @@ GET /status/host-unreachable
 
 ### cURL
 ```bash
+# Root endpoint
+curl http://localhost:4020/
+
 # Success response
-curl http://localhost:4020/status/200
+curl -X POST http://localhost:4020/status/200
 
 # Error response
-curl http://localhost:4020/status/404
+curl -X POST http://localhost:4020/status/404
 
 # Rate limit
-curl http://localhost:4020/status/429
+curl -X POST http://localhost:4020/status/429
 ```
 
 ### JavaScript/Fetch API
