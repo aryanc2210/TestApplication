@@ -1,0 +1,68 @@
+export class HttpService {
+  public async success(): Promise<any> {
+    return {
+      message: "SUCCESS",
+      status: "200",
+    };
+  }
+
+  public async created(): Promise<any> {
+    return {
+      message: "CREATED",
+      status: "201",
+    };
+  }
+  public async badRequest(): Promise<any> {
+    return {
+      message: "BAD_REQUEST",
+      status: "400",
+    };
+  }
+  public async notFound(): Promise<any> {
+    return {
+      message: "RESOURCE_NOT_FOUND",
+      status: "404",
+    };
+  }
+  public async internalServerError(): Promise<any> {
+    return {
+      message: "INTERNAL_SERVER_ERROR",
+      status: "500",
+    };
+  }
+
+  public async rateLimit(): Promise<any> {
+    return {
+      message: "RATE_LIMIT_ERROR",
+      status: "429",
+    };
+  }
+
+  public async unauthorized(): Promise<any> {
+    return {
+      message: "UNAUTHORIZED",
+      status: "401",
+    };
+  }
+
+  public async forbidden(): Promise<any> {
+    return {
+      message: "FORBIDDEN",
+      status: "403",
+    };
+  }
+
+  public async badGateway(): Promise<any> {
+    return {
+      message: "BAD_GATEWAY",
+      status: "502",
+    };
+  }
+
+  public async serviceUnreachable(): Promise<any> {
+    return {
+      message: "SERVICE_UNAVAILABLE",
+      status: "503",
+    };
+  }
+}
