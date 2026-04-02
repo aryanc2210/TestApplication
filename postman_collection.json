@@ -1,0 +1,331 @@
+{
+  "info": {
+    "_postman_id": "test-app-collection-2024",
+    "name": "TestApplication API",
+    "description": "API collection for TestApplication - HTTP Status Code Testing Server",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Success Responses",
+      "item": [
+        {
+          "name": "200 - Success",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/status/200",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "status",
+                "200"
+              ]
+            },
+            "description": "Returns a successful response (200 OK)"
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:4020/status/200",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4020",
+                  "path": [
+                    "status",
+                    "200"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "body": "{\n  \"message\": \"SUCCESS\",\n  \"status\": \"200\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "201 - Created",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/status/201",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "status",
+                "201"
+              ]
+            },
+            "description": "Returns a created response (201 Created)"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Client Error Responses",
+      "item": [
+        {
+          "name": "400 - Bad Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/status/400",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "status",
+                "400"
+              ]
+            },
+            "description": "Returns a bad request error (400 Bad Request)"
+          }
+        },
+        {
+          "name": "401 - Unauthorized",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/status/401",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "status",
+                "401"
+              ]
+            },
+            "description": "Returns an unauthorized error (401 Unauthorized)"
+          }
+        },
+        {
+          "name": "403 - Forbidden",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/status/403",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "status",
+                "403"
+              ]
+            },
+            "description": "Returns a forbidden error (403 Forbidden)"
+          }
+        },
+        {
+          "name": "404 - Not Found",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/status/404",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "status",
+                "404"
+              ]
+            },
+            "description": "Returns a not found error (404 Not Found)"
+          }
+        },
+        {
+          "name": "429 - Rate Limit",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/status/429",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "status",
+                "429"
+              ]
+            },
+            "description": "Returns a rate limit exceeded error (429 Too Many Requests)"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Server Error Responses",
+      "item": [
+        {
+          "name": "500 - Internal Server Error",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/status/500",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "status",
+                "500"
+              ]
+            },
+            "description": "Returns an internal server error (500 Internal Server Error)"
+          }
+        },
+        {
+          "name": "502 - Bad Gateway",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/status/502",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "status",
+                "502"
+              ]
+            },
+            "description": "Returns a bad gateway error (502 Bad Gateway)"
+          }
+        },
+        {
+          "name": "503 - Service Unavailable",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/status/503",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "status",
+                "503"
+              ]
+            },
+            "description": "Returns a service unavailable error (503 Service Unavailable)"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Network Error Responses",
+      "item": [
+        {
+          "name": "Timeout",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/status/timeout",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "status",
+                "timeout"
+              ]
+            },
+            "description": "Simulates a gateway timeout (504 Gateway Timeout)"
+          }
+        },
+        {
+          "name": "Network Error",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/status/network-error",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "status",
+                "network-error"
+              ]
+            },
+            "description": "Simulates a network error (503 Service Unavailable)"
+          }
+        },
+        {
+          "name": "Connection Refused (ECONNREFUSED)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/status/econn-refused",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "status",
+                "econn-refused"
+              ]
+            },
+            "description": "Simulates a connection refused error (502 Bad Gateway)"
+          }
+        },
+        {
+          "name": "DNS Not Found (ENOTFOUND)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/status/dns-not-found",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "status",
+                "dns-not-found"
+              ]
+            },
+            "description": "Simulates a DNS resolution failure (404 Not Found)"
+          }
+        },
+        {
+          "name": "Host Unreachable (EHOSTUNREACH)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/status/host-unreachable",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "status",
+                "host-unreachable"
+              ]
+            },
+            "description": "Simulates a host unreachable error (503 Service Unavailable)"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:4020",
+      "type": "string"
+    }
+  ]
+}

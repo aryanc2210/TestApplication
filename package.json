@@ -21,6 +21,10 @@
     "@types/dotenv": "^6.1.1",
     "@types/express": "^5.0.6",
     "@types/node": "^25.3.5",
+<<<<<<< HEAD
+=======
+    "@types/pg": "^8.18.0",
+>>>>>>> c38ab7c (chore: update package.json to remove prisma dependency)
     "ts-node": "^10.9.2",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
